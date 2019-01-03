@@ -21,7 +21,7 @@ OPTIONAL (if you print the enclosure)
 
 WIRING
 
-Looking at the back of the sensor where the pins are, if you have the pins on the right side of the unit, PIN1 is the left-most pin
+Looking at the back of the sensor where the pins are, if you have the pins on the right side of the unit, PIN1 is the left-most pin. See the included "img-pins.jpg" file
 
 PIN1 - Vin
 PIN2 - Ground
