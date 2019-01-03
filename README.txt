@@ -28,3 +28,7 @@ PIN2 - Ground
 PIN5 - D7
 
 All other pins are unused. When powered you should hear the fan turn if you hold it to your ear (it is fairly quiet) and with the code uploaded you should see "Started" and data showing up in the ArduinoIDE console
+
+USAGE
+
+Once you have wired it up and modified the code to include your WiFi and Adafruit.IO details you can just power it up and it will start logging data. If you make more than one just give each one a unique "GROUP_KEY". On your Adafruit.IO page you should see the data appear on your feed, you DON'T need to define the feed names before sending data, they are created automatically
