@@ -18,10 +18,9 @@ This project pairs an inexpensive sensor with an equally inexpensive NodeMCU (ti
 
 # WIRING
 Looking at the back of the sensor where the pins are, if you have the pins on the right side of the unit, PIN1 is the left-most pin. See the included "img-pins.jpg" file
-
-PIN1 - Vin
-PIN2 - Ground
-PIN5 - D7
+- PIN1 - Vin
+- PIN2 - Ground
+- PIN5 - D7
 
 All other pins are unused. When powered you should hear the fan turn if you hold it to your ear (it is fairly quiet) and with the code uploaded you should see "Started" and data showing up in the ArduinoIDE console
 
