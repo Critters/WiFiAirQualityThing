@@ -12,7 +12,7 @@ This project pairs an inexpensive sensor with an equally inexpensive NodeMCU (ti
 - "PMS5003 High Precision Laser Dust Sensor Module" Can be found on eBay for about $16 each from China or double that if you are in a rush and want a US supplier
 - "NodeMCU" can also be found on eBay for about $5
 
-# OPTIONAL (if you print the enclosure)
+## OPTIONAL (if you print the enclosure)
 - 5x M3x8 screws
 - Zip Tie to fix sensor to housing, though it is a tight fit so not needed if you don't plan to knock it around
 
