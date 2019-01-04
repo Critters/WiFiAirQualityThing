@@ -12,10 +12,14 @@
 #define GROUP_KEY       "<<LOCATION NAME>>"
 #define PIN_DATA        7 // RX from pin 5 on the sensor
 
+// The max value that can be sent to the server, prevents your graphs getting ruiened by a huge spike
+#define SIZE_VALUE_CAP  500     // For PM2.5 and PM10, the sensor starts to lose accuracy after 500
+#define COUNT_VALUE_CAP 50000   // Same, for particle count
+
 /* READ_DELAY: Seconds between readind the sensor
  * if >=60 then sensor will sleep between readings but will wake up 30 seconds before taking a reading (as recommended in the manual)
  * if <60 then the sensor will always be on, you also don't need to wire "PIN_RESET" if you intend to keep it this way */
-#define READ_DELAY      30
+#define READ_DELAY      60
 
 /* SAMPLE_COUNT: Nnumber of samples to take and average before sending data to Adafruit.IO
  * Therefore, (READ_DELAY * SAMPLE_COUNT) = Time between sending data 
@@ -98,9 +102,9 @@ void loop() {
               PM100Average += PM100Array[i];
           }
           MQTT_connect();
-          mqttParticles.publish(particleAverage/SAMPLE_COUNT);
-          mqttPM25.publish(PM25Average/SAMPLE_COUNT);
-          mqttPM100.publish(PM100Average/SAMPLE_COUNT);
+          mqttParticles.publish(min(COUNT_VALUE_CAP, particleAverage/SAMPLE_COUNT));
+          mqttPM25.publish(min(SIZE_VALUE_CAP, PM25Average/SAMPLE_COUNT));
+          mqttPM100.publish(min(SIZE_VALUE_CAP, PM100Average/SAMPLE_COUNT));
           
           arrayPosition = 0;
 
